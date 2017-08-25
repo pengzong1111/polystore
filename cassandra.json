@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "defaultSchema": "htrcSchema",
+  "schemas": [
+    {
+      "name": "htrcSchema",
+      "tables": [
+        {
+          "name": "testtable",
+          "type": "custom",
+          "factory": "org.apache.calcite.adapter.htrc.stores.cassandra.HtrcCassandraTableFactory",
+          "operand": {
+            "host": "localhost",
+            "keyspace": "htrccorpus2",
+            "columnfamily": "testtable",
+            "flavor": "translatable"
+          }
+        }
+       
+      ]
+    }
+  ]
+}
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     

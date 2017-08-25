@@ -21,7 +21,9 @@ public class SqlExecutor {
 	public static void main(String[] args) {
 
 		SqlParser sqlParser = new SqlParser();
-		String queryStr = "select a,b,c from xyz where x=y group by x having count(x)>10 order by y  limit 10";
+		//String queryStr = "select a,b,c from xyz A where x=y group by x having count(x)>10 order by y  limit 10";
+		
+		String queryStr = "select A.a, B.b, B.c from xyz A, xxx B where A.x = B.y";
 		 Statement wrappedStatement = sqlParser.createStatement(queryStr);
 		 System.out.println(wrappedStatement.getClass());
   //       statement = unwrapExecuteStatement(wrappedStatement, sqlParser, session);
@@ -40,7 +42,8 @@ public class SqlExecutor {
 		Optional<Expression> where = body.getWhere();
 		System.out.println("where:" + where.get());
 		
-		Optional<GroupBy> groupBy = body.getGroupBy();
+		
+		/*Optional<GroupBy> groupBy = body.getGroupBy();
 		System.out.println("groupBy:" + groupBy.get());
 		
 		Optional<Expression> having = body.getHaving();
@@ -50,7 +53,7 @@ public class SqlExecutor {
 		System.out.println("orderBy:" + orderBy);
 		
 		Optional<String> limit = body.getLimit();
-		System.out.println("limit:" + limit.get());
+		System.out.println("limit:" + limit.get());*/
 	
 
 	}
